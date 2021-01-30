@@ -24,7 +24,7 @@ property :hba_file,          String, default: lazy { "#{conf_dir}/main/pg_hba.co
 property :ident_file,        String, default: lazy { "#{conf_dir}/main/pg_ident.conf" }
 property :external_pid_file, String, default: lazy { "/var/run/postgresql/#{version}-main.pid" }
 #property :password,          [String, nil], default: 'generate', sensitive: false # Set to nil if we do not want to set a password
-property :password,          [String, nil], default: 'password'
+property :password,          [String, nil], default: 'generate'
 property :port,              Integer, default: 5432
 property :initdb_locale,     String
 property :initdb_encoding,   String
