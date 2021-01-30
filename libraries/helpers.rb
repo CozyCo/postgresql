@@ -24,9 +24,9 @@ module PostgresqlCookbook
     def psql_command_string(new_resource, query, grep_for: nil, value_only: false)
       cmd = %(/usr/bin/psql -c "#{query}")
       cmd << " -d #{new_resource.database}" if new_resource.database
-      cmd << " -U #{new_resource.user}"     if new_resource.user
+      #cmd << " -U #{new_resource.user}"     if new_resource.user
       cmd << " --host #{new_resource.host}" if new_resource.host
-      cmd << " --port #{new_resource.port}" if new_resource.port
+      #cmd << " --port #{new_resource.port}" if new_resource.port
       cmd << ' --tuples-only'               if value_only
       cmd << " | grep #{grep_for}"          if grep_for
       cmd
